@@ -10,6 +10,9 @@ gem 'spork-rails'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'autotest'
+  gem 'autotest-rails'
+  gem 'autotest-growl'
 end
 
 
@@ -25,10 +28,7 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara'
-  gem 'rspec'
-  gem 'autotest'
-  gem 'autotest-rails'
-  gem 'autotest-growl'	
+  gem 'rspec'	
 end
 
 group :production do
