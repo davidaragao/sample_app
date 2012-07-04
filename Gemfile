@@ -6,9 +6,6 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'spork-rails'
-gem 'autotest'
-gem 'autotest-rails'
-gem 'autotest-growl'
 
 group :development, :test do
   gem 'sqlite3'
@@ -28,7 +25,10 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara'
-  gem 'rspec'	
+  gem 'rspec'
+  gem 'autotest'
+  gem 'autotest-rails'
+  gem 'autotest-growl'	
 end
 
 group :production do
