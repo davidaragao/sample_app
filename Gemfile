@@ -5,6 +5,11 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+gem 'spork-rails'
+gem 'autotest'
+gem 'autotest-rails'
+gem 'autotest-growl'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
@@ -23,6 +28,7 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara'
+  gem 'rspec'	
 end
 
 group :production do
