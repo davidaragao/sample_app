@@ -6,13 +6,13 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'spork-rails'
+gem 'rspec-rails'
+gem 'autotest'
+gem 'autotest-rails'
+gem 'autotest-growl'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem 'autotest'
-  gem 'autotest-rails'
-  gem 'autotest-growl'
 end
 
 
