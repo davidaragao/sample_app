@@ -1,16 +1,16 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-gem 'bootstrap-sass', '2.0.0'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'spork-rails'
-gem 'rspec-rails'
-gem 'autotest'
-gem 'autotest-rails'
-gem 'autotest-growl'
+# gem 'spork-rails'
+# gem 'rspec-rails'
+# gem 'autotest'
+# gem 'autotest-rails'
+# gem 'autotest-growl'
 
 group :development, :test do
   gem 'sqlite3'
@@ -20,9 +20,9 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '3.1.4'
 end
 
 gem 'jquery-rails'
