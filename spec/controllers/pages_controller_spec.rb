@@ -7,75 +7,33 @@ describe PagesController do
     @basetitle = "Ruby on Rails Tutorial Sample App"
   end
   
-  describe "GET 'home'" do
-    it "returns http success" do
-      get 'home'
-      response.should be_success
-    end
-    
-    it "Should have the right title" do
-      get 'home'
-      response.should have_selector("title",
-                                    :content => "#{@basetitle} | Home")
-    end
-    
-    it "Should have a non-blank body" do
-      get 'home'
-      response.body.should_not =~ /<body>\s*<\/body>/
-    end  
+  subject { response }
+  
+  describe "Home Page" do
+    before{ get 'home' }
+    it { should be_success }
+    it { should have_selector("title", :content => "#{@basetitle} | Home") }
+    it { body.should_not =~ /<body>\s*<\/body>/ }  
   end
 
-  describe "GET 'contact'" do
-    it "returns http success" do
-      get 'contact'
-      response.should be_success
-    end
-    
-    it "Should have the right title" do
-      get 'contact'
-      response.should have_selector("title",
-                                    :content => "#{@basetitle} | Contact")
-    end
-    
-    it "Should have a non-blank body" do
-      get 'contact'
-      response.body.should_not =~ /<body>\s*<\/body>/
-    end  
+  describe "Contact Page" do
+    before{ get 'contact' }
+    it { should be_success }
+    it { should have_selector("title", :content => "#{@basetitle} | Contact") }
+    it { body.should_not  =~ /<body>\s*<\/body>/ }
   end
   
-  describe "GET 'about'" do
-    it "returns http success" do
-      get 'about'
-      response.should be_success
-    end
-    
-    it "Should have the right title" do
-      get 'about'
-      response.should have_selector("title",
-                                    :content => "#{@basetitle} | About")
-    end
-    
-    it "Should have a non-blank body" do
-      get 'about'
-      response.body.should_not =~ /<body>\s*<\/body>/
-    end
+  describe "About Page" do
+    before{ get 'about' }
+    it { should be_success }
+    it { should have_selector("title", :content => "#{@basetitle} | About") }
+    it { body.should_not  =~ /<body>\s*<\/body>/ }
   end
   
-  describe "GET 'help'" do
-    it "returns http success" do
-      get 'help'
-      response.should be_success
-    end
-    
-    it "Should have the right title" do
-      get 'help'
-      response.should have_selector("title",
-                                    :content => "#{@basetitle} | Help")
-    end
-    
-    it "Should have a non-blank body" do
-      get 'help'
-      response.body.should_not =~ /<body>\s*<\/body>/
-    end
+  describe "Contact Help" do
+    before{ get 'help' }
+    it { should be_success }
+    it { should have_selector("title", :content => "#{@basetitle} | Help") }
+    it { body.should_not  =~ /<body>\s*<\/body>/ }
   end
 end
