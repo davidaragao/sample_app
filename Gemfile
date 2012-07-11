@@ -6,16 +6,6 @@ gem 'bootstrap-sass'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-# gem 'spork-rails'
-# gem 'rspec-rails'
-# gem 'autotest'
-# gem 'autotest-rails'
-# gem 'autotest-growl'
-
-group :development, :test do
-  gem 'sqlite3'
-end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,6 +16,18 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'spork-rails'
+gem 'rspec-rails'
+gem 'autotest'
+gem 'autotest-rails'
+gem 'autotest-growl'
+
+group :development, :test do
+  gem 'sqlite3'
+end
+
+gem 'annotate', '~> 2.4.1.beta', group: :development
 
 group :test do
   gem 'capybara'
