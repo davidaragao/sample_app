@@ -33,7 +33,8 @@ gem 'annotate', '~> 2.4.1.beta', group: :development
 group :test do
   gem 'capybara'
   gem 'webrat'
-  gem 'rspec'	
+  gem 'rspec'
+  gem 'factory_girl_rails'	
 end
 
 group :production do
