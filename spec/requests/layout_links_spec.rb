@@ -49,5 +49,23 @@ describe "LayoutLinks" do
       it { should have_selector('h1',    content: user.name) }
       it { should have_selector('title', content: user.name) }
   end
+  
+  describe "When not signed in" do 
+    let(:user) { FactoryGirl.create(:user) }
+    before(:each) do 
+      visit signin_path 
+      fill_in "Email",         with: user.email
+      fill_in "Password",         with: user.password
+      click_button "Sign in"
+    end
+    
+    it "Should have a sign out link" do
+      visit root_path
+      response.should have_selector("a", href: signout_path, 
+                                         content: "Sign out")
+      response.should have_selector("a", href: user_path(user),
+                                         content: "Profile")
+    end
+  end
       
 end

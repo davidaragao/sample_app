@@ -19,26 +19,45 @@ describe "Authentication" do
 
       it { should have_selector('title', content: 'Sign in') }
       it { should have_selector('div.alert.alert-error', content: 'Invalid') }
+      it { should_not have_link('Sign in', href: signin_path) }
+      
       
       describe "after visiting another page" do
         before { click_link "Home" }
         it { should_not have_selector('div.alert.alert-error') }
       end
+      
+      # describe "followed by signout" do
+      #        before { click_link "Sign out" }
+      #        it { should have_link('Sign in') }
+      #      end
+      
     end
   
-    # describe "with valid information" do      
-    #       let(:user) { FactoryGirl.create(:user) }
-    #       before do
-    #         fill_in "Email",    with: user.email
-    #         fill_in "Password", with: user.password
-    #       end
-    #       
-    #       before {  click_button "Sign in" }
-    # 
-    #       it { should have_selector('title', content: user.name) }
-    #       it { should have_link('Profile', href: user_path(user)) }
-    #       it { should have_link('Sign out', href: signout_path) }
-    #       it { should_not have_link('Sign in', href: signin_path) }
-    #     end
+    
+    describe "with valid information" do      
+      let(:user) { FactoryGirl.create(:user) }
+      before do
+        fill_in "Email",    with: user.email
+        fill_in "Password", with: user.password
+        click_button "Sign in"
+      end
+      
+      it "Should sign the user in" do
+        controller.current_user.should == user
+        controller.should be_signed_in
+      end
+      
+      # it "redirect to the user show page" do
+      #         response.should redirect_to user
+      #       end
+                      
+      it { should have_selector('title', content: user.name) }
+      it { should have_selector('a', href: user_path(user), content: "Profile") }
+      it { should have_selector('a', href: signout_path, content: "Sign out") }
+      it { should_not have_link('Sign in', href: signin_path) }
+    end
   end
+  
+  
 end
