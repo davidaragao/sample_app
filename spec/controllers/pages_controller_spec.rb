@@ -35,5 +35,5 @@ describe PagesController do
     it { should be_success }
     it { should have_selector("title", :content => "#{@basetitle} | Help") }
     it { body.should_not  =~ /<body>\s*<\/body>/ }
-  end
+  end 
 end
