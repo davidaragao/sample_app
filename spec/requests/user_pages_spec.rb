@@ -118,5 +118,29 @@ describe "User Pages" do
     end
     
   end
+  
+  describe "index" do
+    subject { response }
+    let(:user) { FactoryGirl.create(:user) }
+    
+    before(:all) { 30.times { FactoryGirl.create(:user) } }
+    after(:all) { User.delete_all }
+    
+    before(:each) do
+        sign_in user
+        visit users_path
+    end
+
+    it { should have_selector('title', content: 'All users') }
+    it { should have_selector('h1',    content: 'All users') }
+
+    it { should have_selector('div.pagination') } 
+
+    it "should list each user" do
+      User.paginate(page:1).each do |user|
+        response.should have_selector('li', content: user.name)
+      end
+    end
+  end
         
 end

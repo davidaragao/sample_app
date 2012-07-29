@@ -53,6 +53,7 @@ describe "Authentication" do
       #       end
                       
       it { should have_selector('title', content: user.name) }
+      it { should have_selector('a', href: users_path, content: "Users")}
       it { should have_selector('a', href: user_path(user), content: "Profile") }
       it { should have_selector('a', href: signout_path, content: "Sign out") }
       it { should_not have_link('Sign in', href: signin_path) }
@@ -90,10 +91,15 @@ describe "Authentication" do
           before { put user_path(user) }
           it { should redirect_to(signin_path) }
         end
+        
+        describe "visiting the user index" do
+          before { visit users_path }
+          it { should have_selector('title', content: 'Sign in') }
+        end
       end
     end
     
-    describe "as wrong user" do
+    describe "for signed in users" do
       let(:user) { FactoryGirl.create(:user) }
       let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
       before { sign_in user }
