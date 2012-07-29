@@ -141,6 +141,25 @@ describe "User Pages" do
         response.should have_selector('li', content: user.name)
       end
     end
+    
+    describe "delete links" do
+
+      it { should_not have_link('delete') } #requires that ordinary users not see delete links
+
+      describe "as an admin user" do
+        let(:admin) { FactoryGirl.create(:admin) }
+        before do
+          sign_in admin
+          visit users_path
+        end
+
+        it { should have_selector("a", href: user_path(User.first), content: "delete") }
+        it "should be able to delete another user" do
+          expect { click_link('delete') }.to change(User, :count).by(-1)
+        end
+        it { should_not have_selector("a", href: user_path(admin), content: "delete") }
+      end
+    end
   end
         
 end
