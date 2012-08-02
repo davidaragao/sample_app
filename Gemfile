@@ -21,11 +21,11 @@ end
 
 gem 'jquery-rails'
 
-gem 'spork-rails'
-gem 'rspec-rails'
-gem 'autotest'
-gem 'autotest-rails'
-gem 'autotest-growl'
+# gem 'spork-rails'
+# gem 'rspec-rails'
+# gem 'autotest'
+# gem 'autotest-rails'
+# gem 'autotest-growl'
 
 group :development, :test do
   gem 'sqlite3'
