@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage = ""
   s.require_paths = ["lib"]
   s.rubyforge_project = "coffee-rails"
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.24"
   s.summary = "Coffee Script adapter for the Rails asset pipeline."
 
   if s.respond_to? :specification_version then

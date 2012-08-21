@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email = "josh@joshpeek.com"
   s.homepage = "http://github.com/josh/ruby-coffee-script"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.24"
   s.summary = "Ruby CoffeeScript Compiler"
 
   if s.respond_to? :specification_version then

@@ -21,23 +21,22 @@ end
 
 gem 'jquery-rails'
 
-# gem 'spork-rails'
-# gem 'rspec-rails'
-# gem 'autotest'
-# gem 'autotest-rails'
-# gem 'autotest-growl'
-
 group :development, :test do
   gem 'sqlite3'
+  gem 'annotate', '~> 2.4.1.beta'
 end
-
-gem 'annotate', '~> 2.4.1.beta', group: :development
 
 group :test do
   gem 'capybara'
   gem 'webrat'
   gem 'rspec'
-  gem 'factory_girl_rails'	
+  gem 'factory_girl_rails'
+
+  gem 'spork-rails'
+  gem 'rspec-rails'
+  gem 'autotest'
+  gem 'autotest-rails'
+  gem 'autotest-growl'
 end
 
 group :production do

@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.post_install_message = "\e[1;32m\n-------------------------------------------------------------------------------\n\nIn order to use autotest-growl, install either the comprehensive \nZenTest gem or the lightweight autotest-standalone gem and then add the \nfollowing line to your ~/.autotest file:\n\nrequire 'autotest/growl'\n\nMake sure the notification service installed on your computer:\n\nhttp://growl.info (Growl for Mac OS X)\nhttp://growlforwindows.com (Growl for Windows)\nhttp://www.galago-project.org (libnotify for Linux)\n\nMac OS X users only: Make sure you have an adequate version of Growl\ninstalled, take a look at the README for assistance.\n\nIf Growl notifications are not always displayed, take a look at the README\nfor assistance.\n\nFor more information, feedback and bug submissions, please visit:\n\nhttp://www.bitcetera.com/products/autotest-growl\n\nIf you like this gem, please consider to recommend me on Working with\nRails, thank you!\n\nhttp://workingwithrails.com/recommendation/new/person/11706-sven-schwyn\n\n-------------------------------------------------------------------------------\n\e[0m"
   s.require_paths = ["lib"]
   s.rubyforge_project = "autotest-growl"
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.24"
   s.summary = "Growl notification support for autotest"
 
   if s.respond_to? :specification_version then

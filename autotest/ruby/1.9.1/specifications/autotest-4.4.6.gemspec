@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
   s.rubyforge_project = "seattlerb"
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.24"
   s.summary = "This is a stub gem to fix the confusion caused by autotest being part of the ZenTest suite."
 
   if s.respond_to? :specification_version then
