@@ -73,12 +73,22 @@ describe "User Pages" do
   describe "profile page" do
     subject { response }
     let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
+    let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
     before { visit user_path(user) }
 
     it { should have_selector('h1',    content: user.name) }
     it { should have_selector('title', content: user.name) }
+    
+    describe "microposts" do
+      it { should have_selector('span', content: m1.content) }
+      it { should have_selector('span', content: m2.content) }
+      it { should have_selector('h3', content: user.microposts.count.to_s) }
+    end
   end
   
+  
+
   describe "edit" do
     subject { response }
     let(:user) { FactoryGirl.create(:user) }

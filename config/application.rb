@@ -53,5 +53,8 @@ module SampleApp
     
     # Run rake assets:precompile
     config.assets.initialize_on_precompile = false
+    
+    # Mass assignment security error exception
+    #config.active_record.whitelist_attributes = true
   end
 end
